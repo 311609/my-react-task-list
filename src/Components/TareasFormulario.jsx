@@ -1,68 +1,44 @@
 import React from 'react';
-import {  useRef } from 'react';
-import { useReducer } from 'react';
-import './App.css';
+import { useState } from 'react';
+import {  v4 as uuidv4 } from 'uuid';
 
 
 
-const ListaTareas =() => {
+function TareasFormulario(props) {
 
-  const inputRef = useRef();
-  
-  const [tasks, dispatch] = useReducer((state = [], action) => {
+  const [input, setInput] = useState('');
 
-    switch (action.type) {
-      case 'add_task': {
-        return [
-        ...state,
-        {id: state.length, title: action.title }
-        ]
-      }
-      case 'remove_task': {
-        return state.filter((tasks, index) => index != action.index);
+  const manejarCambio = e => {
+    setInput(e.target.value);
+  }
 
-      }
-
-      default: {
-        return state;
-      }
+  const manejarEnvio = e => {
+    e.preventDefault();
+    const tareaNueva = {
+      id: uuidv4(),
+      texto: input,
+      completada: false
     }
-  });
-
-   const handleSubmit =(event) =>{
-    event.preventDefault();
-    dispatch({
-      type: 'add_task',
-      title: inputRef.current.value
-    });
-   }
-
+    props.onSubmit(tareaNueva);
+  }
   return (
-   <div>
-    <h1>Lista de Tareas</h1>
-      <form onSubmit={handleSubmit}>
-        <label>TAREA</label>
-        <input type= "text" name="title" ref={inputRef} />
-        <input type="submit" value="Enviar" />
-</form>
+    <form
+    className='tarea-formulario'
+    onSubmit={manejarEnvio}>
+      <input
+      className='tarea-input'
+      type='text'
+      placeholder='Ingresar tarea'
+      name='texto'
+      onChange={manejarCambio}
+      />
+      <button className='tarea-boton'>
+        Agregar
+      </button>
+    </form>
+  );
 
+  }
 
-      < div className='tasks'>
-        {tasks && tasks.map((task, index) => (
-          <div className='task' key={index}>
-            <p>{task.title}</p>
-            <button onClick={() => dispatch({type: 'remove_task', index})}>
-              BORRAR</button>
-       </div>
-        ))
-      
-        }
-     </div>
-    </div>
   
-  )
-   
-  
-      }
-
-export default ListaTareas;
+export default TareasFormulario;

@@ -5,7 +5,7 @@ import { BsFillClipboard2XFill } from 'react-icons/ai';
 
 function Tarea({id, texto, completada, completarTarea, eliminarTarea}) {
     return (
-        <div className={cpmpletada ? 'tarea-contenedor completada' : 'tarea-contenedor'} >
+        <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'} >
             <div
             onClick={() => completarTarea(id) }>
             {texto}

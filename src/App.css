@@ -1,5 +1,5 @@
 * {
-  margin 0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -10,4 +10,41 @@ body {
   background-color: #1b1b32;
   font-family: Roboto, sans-serif;
   margin-top: 40px;
+}
+
+h1 {
+  color: blue;
+  font: 25px;
+  font-family: Lato, sans-serif;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.aplicacion-tareas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.adaschool-logo-contenedor {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adaschool-logo {
+  width: 400px;
+  height: 60px;
+}
+
+.tareas-lista-principal {
+  width: 600px;
+  min-height: 500px;
+  background-color: #d0d0d5;
+  padding: 25px;
+  margin: 10px;
+  justify-content: center;
+  border-radius: 26px;
 }
