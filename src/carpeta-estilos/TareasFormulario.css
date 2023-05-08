@@ -9,7 +9,8 @@
     font-size: 18px;
     background-color: white;
     padding: 14px 32px 14px 16px;
-    border-radius: 2px solid #00371b;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #00371b;
     outline: none;
     color: black;
 }
@@ -22,4 +23,5 @@
     background-color: #00371b;
     color: #fff;
     text-transform: capitalize;
+    outline: none;
 }

@@ -8,9 +8,12 @@
       {
         "ignore": [
           "font-synthesis",
-          "-webkit-text-size-adjust"
+          "-webkit-text-size-adjust",
+          "overflow-wrap: anywhere"
         ]
       }
-    ]
+    ],
+    "detect-css-reflows/paint": "off",
+    "detect-css-reflows/composite": "off"
   }
 }

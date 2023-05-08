@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import '../carpeta-estilos/TareasFormulario.css';
 import {  v4 as uuidv4 } from 'uuid';
 
 
@@ -12,7 +13,7 @@ function TareasFormulario(props) {
     setInput(e.target.value);
   }
 
-  const manejarEnvio = e => {
+  const manejarEnvio = e =>  {
     e.preventDefault();
     const tareaNueva = {
       id: uuidv4(),

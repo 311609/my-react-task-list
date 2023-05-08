@@ -1,13 +1,14 @@
 import './App.css';
-import adaScholLogo from  './imagenes/logo-Ada.png';
-import ListaDeTareas from './Components/ListaDeTareas';
+import Tarea from './Components/Tarea.jsx';
+import adaSchoolLogo from  './imagenes/logo-Ada.png';
+import ListaDeTareas from './Components/ListaDeTareas.jsx';
 
 function App() {
     return (
         <div className='aplicacion-tareas'>
           <div className='adaschool-logo-contenedor'>  
             <img
-            src={adaScholLogo}
+            src={adaSchoolLogo}
             className='adaschool-logo' />
         </div>
         <div className='tareas-lista-principal'>

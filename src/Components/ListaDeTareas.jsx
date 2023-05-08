@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import Tarea from "./Tarea";
+import Tarea from "./Tarea.jsx";
 import '../carpeta-estilos/ListaDeTareas.css';
 import TareasFormulario from "./TareasFormulario";
 
-function ListaDeTareas() {
+function ListaDeTareas()  {
 
     const [tareas, setTareas] = useState([]);
 
