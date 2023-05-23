@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import '../carpeta-estilos/TareasFormulario.css';
+import '../carpeta-estilos/TaskForm.css';
 import {  v4 as uuidv4 } from 'uuid';
 
 

@@ -3,8 +3,10 @@ function Header() {
     return <nav>
         <ul>
             <li>
-                <a href="/">Lista de Tareas</a>
+                <a href="/">Task List</a>
             </li>
         </ul>
     </nav>
 }
+
+export default Header;

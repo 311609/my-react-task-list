@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Task from "./Task";
-import '../carpeta-estilos/ListaDeTareas.css';
+import '../carpeta-estilos/TaskList.css';
 import TaskForm from "./TaskForm";
 
 function TaskList()  {
@@ -21,6 +21,8 @@ function TaskList()  {
         const tareasActualizadas = tareas.filter(tarea => tarea.id !== id);
         setTareas(tareasActualizadas);
     }
+
+    
 
     const completarTarea = id => {
         const tareasActualizadas = tareas.map(tarea => {
@@ -43,7 +45,8 @@ function TaskList()  {
                  texto={tarea.texto}
                  completada={tarea.completada}
                  completarTarea={completarTarea}
-                 eliminarTarea={eliminarTarea} />
+                 eliminarTarea={eliminarTarea}
+                 editarTarea={editarTarea} />
               )
           }
         </div>
