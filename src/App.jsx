@@ -1,6 +1,6 @@
 import './App.css';
 import adaSchoolLogo from  './imagenes/logo-Ada.png';
-import ListaDeTareas from './Components/ListaDeTareas.jsx';
+import TaskList from './Components/TaskList';
 
 function App() {
     return (
@@ -12,7 +12,8 @@ function App() {
         </div>
         <div className='tareas-lista-principal'>
             <h1>Lista Tareas</h1>
-            <ListaDeTareas />
+            <Header />
+            <TaskList />
         </div>
       </div>     
     );

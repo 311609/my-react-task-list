@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import Tarea from "./Task.jsx";
+import Task from "./Task";
 import '../carpeta-estilos/ListaDeTareas.css';
-import TareasFormulario from "./TaskForm.jsx";
+import TaskForm from "./TaskForm";
 
-function ListaDeTareas()  {
+function TaskList()  {
 
     const [tareas, setTareas] = useState([]);
 
@@ -33,11 +33,11 @@ function ListaDeTareas()  {
     }
     return (
         <>
-        <TareasFormulario onSubmit={agregarTarea} />
+        <TaskForm onSubmit={agregarTarea} />
         <div className="tarea-lista-contenedor">
             {
                 tareas.map((tarea) => 
-                <Tarea
+                <Task
                 key={tarea.id}
                 id={tarea.id}
                  texto={tarea.texto}
@@ -52,4 +52,4 @@ function ListaDeTareas()  {
 
 } 
 
-export default ListaDeTareas;
+export default TaskList;

@@ -5,7 +5,7 @@ import {  v4 as uuidv4 } from 'uuid';
 
 
 
-function TareasFormulario(props) {
+function TaskForm(props) {
 
   const [input, setInput] = useState('');
 
@@ -49,4 +49,4 @@ function TareasFormulario(props) {
   }
 
   
-export default TareasFormulario;
+export default TaskForm;

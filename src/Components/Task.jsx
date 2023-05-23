@@ -3,7 +3,7 @@ import '../carpeta-estilos/Tarea.css';
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 
-function Tarea({id, texto, completada, completarTarea, eliminarTarea }) {
+function Task({id, texto, completada, completarTarea, eliminarTarea }) {
     return (
         <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'} >
             <div
@@ -19,4 +19,4 @@ function Tarea({id, texto, completada, completarTarea, eliminarTarea }) {
     );
 }
 
-export default Tarea;
+export default Task;
