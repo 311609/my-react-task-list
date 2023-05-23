@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import Tarea from "./Tarea.jsx";
+import Tarea from "./Task.jsx";
 import '../carpeta-estilos/ListaDeTareas.css';
-import TareasFormulario from "./TareasFormulario";
+import TareasFormulario from "./TaskForm.jsx";
 
 function ListaDeTareas()  {
 
