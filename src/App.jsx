@@ -1,5 +1,4 @@
 import './App.css';
-import Tarea from './Components/Tarea.jsx';
 import adaSchoolLogo from  './imagenes/logo-Ada.png';
 import ListaDeTareas from './Components/ListaDeTareas.jsx';
 

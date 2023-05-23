@@ -14,6 +14,7 @@ function ListaDeTareas()  {
             const tareasActualizadas = [tarea, ...tareas];
             setTareas(tareasActualizadas);
         }
+        
     };
 
     const eliminarTarea = id => {
