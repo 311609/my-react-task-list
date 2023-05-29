@@ -22,6 +22,11 @@ function TaskList()  {
         setTareas(tareasActualizadas);
     }
 
+    function editarTarea(_e) {
+        setTareas(tareas.map(tarea => tarea.id == id ?
+            { ...tarea, isEditing: !tarea.isEditing } : tarea));
+    }
+
     
 
     const completarTarea = id => {
@@ -32,7 +37,10 @@ function TaskList()  {
             return tarea;
         });
         setTareas(tareasActualizadas);
-    }
+
+        localStorage.setTareas('tarea', tareasActualizadas);
+    };
+
     return (
         <>
         <TaskForm onSubmit={agregarTarea} />

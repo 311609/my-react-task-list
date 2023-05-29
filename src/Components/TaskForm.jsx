@@ -24,9 +24,17 @@ function TaskForm(props) {
       texto: input,
       completada: false
     }
-    
+  
 
     props.onSubmit(tareaNueva);
+
+
+    localStorage.setItem('tarea', JSON.stringify(tareaNueva));
+
+
+    setInput('');
+        
+
  
   }
   return (
