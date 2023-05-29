@@ -12,10 +12,17 @@ function TaskList()  {
         if (tarea.texto.trim()) {
             tarea.texto = tarea.texto.trim();
             const tareasActualizadas = [tarea, ...tareas];
+           
             setTareas(tareasActualizadas);
+
+      localStorage.setItem('tareas', JSON.stringify(tareasActualizadas));      
         }
+
+        console.log({ tareas });
         
     };
+
+   
 
     const eliminarTarea = id => {
         const tareasActualizadas = tareas.filter(tarea => tarea.id !== id);

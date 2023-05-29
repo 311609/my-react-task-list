@@ -12,7 +12,6 @@ function App() {
             className='adaschool-logo' />
         </div>
         <div className='tareas-lista-principal'>
-            <h1>To Do List</h1>
             <Header />
             <TaskList />
         </div>

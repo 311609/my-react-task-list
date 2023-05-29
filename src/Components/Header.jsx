@@ -1,12 +1,14 @@
 
 function Header() {
-    return <nav>
-        <ul>
+    return (
+        <div className="contenedor-Header">
+         <ul>
             <li>
-                <a href="/">Task List</a>
+                <h1>To Do List</h1>
             </li>
         </ul>
-    </nav>
+    </div>
+    )
 }
 
 export default Header;

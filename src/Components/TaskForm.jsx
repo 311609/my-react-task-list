@@ -14,7 +14,12 @@ function TaskForm(props) {
   const manejarCambio = e => {
     setInput(e.target.value);
 
-  }
+   
+    }
+
+    
+
+
 
 
   const manejarEnvio = e =>  {
@@ -25,14 +30,10 @@ function TaskForm(props) {
       completada: false
     }
   
+  
 
     props.onSubmit(tareaNueva);
 
-
-    localStorage.setItem('tarea', JSON.stringify(tareaNueva));
-
-
-    setInput('');
         
 
  
