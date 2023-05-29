@@ -1,18 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import Tarea from "./Tarea.jsx";
-import '../carpeta-estilos/ListaDeTareas.css';
-import TareasFormulario from "./TareasFormulario";
+import Task from "./Task.jsx";
+import '../carpeta-estilos/TaskList.css';
+import TaskForm from "./TaskForm.jsx";
 
-function ListaDeTareas()  {
+function TaskList()  {
 
     const [tareas, setTareas] = useState([]);
 
     const agregarTarea = tarea => {
         if (tarea.texto.trim()) {
             tarea.texto = tarea.texto.trim();
-            const tareasActualizadas = [tarea, ...tareas];
+            const tareasActualizadas = [tarea, ...tareas];   
+
             setTareas(tareasActualizadas);
+
+      localStorage.setItem('tareas', JSON.stringify(tareasActualizadas));
         }
     };
 
@@ -32,11 +35,11 @@ function ListaDeTareas()  {
     }
     return (
         <>
-        <TareasFormulario onSubmit={agregarTarea} />
+        <TaskForm onSubmit={agregarTarea} />
         <div className="tarea-lista-contenedor">
             {
                 tareas.map((tarea) => 
-                <Tarea
+                <Task
                 key={tarea.id}
                 id={tarea.id}
                  texto={tarea.texto}
@@ -51,4 +54,4 @@ function ListaDeTareas()  {
 
 } 
 
-export default ListaDeTareas;
+export default TaskList;

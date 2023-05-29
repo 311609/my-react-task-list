@@ -1,9 +1,9 @@
 import React from "react";
-import '../carpeta-estilos/Tarea.css';
-import { AiOutlineCloseCircle } from 'react-icons/ai'
+import '../carpeta-estilos/Task.css';
+import { AiFillEdit, AiOutlineCloseCircle } from 'react-icons/ai'
 
 
-function Tarea({id, texto, completada, completarTarea, eliminarTarea }) {
+function Task({id, texto, completada, completarTarea, eliminarTarea }) {
     return (
         <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'} >
             <div
@@ -14,9 +14,11 @@ function Tarea({id, texto, completada, completarTarea, eliminarTarea }) {
              className='tarea-contenedor-iconos'
              onClick={() => eliminarTarea(id) }>
                 <AiOutlineCloseCircle className='tarea-icono' />
+
+                <AiFillEdit className="tarea-icono" onClick={() => editarTarea} />
         </div>
       </div>
     );
 }
 
-export default Tarea;
+export default Task;

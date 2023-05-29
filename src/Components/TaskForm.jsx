@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import '../carpeta-estilos/TareasFormulario.css';
+import '../carpeta-estilos/TaskForm.css';
 import {  v4 as uuidv4 } from 'uuid';
 
 
 
-function TareasFormulario(props) {
+function TaskForm(props) {
 
   const [input, setInput] = useState('');
 
@@ -42,4 +42,4 @@ function TareasFormulario(props) {
   }
 
   
-export default TareasFormulario;
+export default TaskForm;
