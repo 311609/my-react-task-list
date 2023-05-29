@@ -19,7 +19,7 @@ const ListaTareas =() => {
         ]
       }
       case 'remove_task': {
-        return state.filter((tasks, index) => index != action.index);
+        return state.filter((_tasks, index) => index != action.index);
 
       }
 
@@ -39,7 +39,7 @@ const ListaTareas =() => {
 
   return (
    <div>
-    <h1>Lista de Tareas</h1>
+    <h1>To Do List</h1>
       <form onSubmit={handleSubmit}>
         <label>TAREA</label>
         <input type= "text" name="title" ref={inputRef} />
