@@ -23,8 +23,8 @@ function TaskList()  {
     }
 
     function editarTarea(_e) {
-        setTareas(tareas.map(tarea => tarea.id == id ?
-            { ...tarea, isEditing: !tarea.isEditing } : tarea));
+        setTareas(tareas.map(tarea => tarea.id == tarea.id ?
+            {...tarea, isEditing: !tarea.isEditing } : tarea));
     }
 
     
@@ -38,7 +38,7 @@ function TaskList()  {
         });
         setTareas(tareasActualizadas);
 
-        localStorage.setTareas('tarea', tareasActualizadas);
+
     };
 
     return (

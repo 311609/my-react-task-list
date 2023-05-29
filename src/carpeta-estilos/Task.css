@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 .tarea-contenedor:nth-child(1 + 1) {
-    background-color: rgb(72, 72, 159);
+    background-color: rgb(191, 191, 198);
 }
 
 .tarea-texto {

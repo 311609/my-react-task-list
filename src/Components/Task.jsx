@@ -15,7 +15,7 @@ function Task({id, texto, completada, completarTarea, editarTarea, eliminarTarea
              onClick={() => eliminarTarea(id) }>
                 <AiOutlineCloseCircle className='tarea-icono' />           
                         
-                <AiFillEdit className="tarea-icono" onClick={() => editarTarea(tarea.id)} />
+                <AiFillEdit className="tarea-icono" onClick={() => editarTarea(texto)} />
              </div> 
           </div>
     
