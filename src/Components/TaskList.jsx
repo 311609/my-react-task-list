@@ -29,11 +29,20 @@ function TaskList()  {
         setTareas(tareasActualizadas);
     }
 
-    function editarTarea(_e) {
+    const editarTarea = id => {
         setTareas(tareas.map(tarea => tarea.id == tarea.id ?
             {...tarea, isEditing: !tarea.isEditing } : tarea));
-    }
+    };
 
+    const actualizarTarea = (id, nuevoTexto) => {
+        const tareasActualizadas = tareas.map(tarea => {
+            if (tarea.id === id) {
+                tarea.texto = nuevoTexto;
+            }
+            return tarea;
+        });
+        setTareas(tareasActualizadas);
+    };
     
 
     const completarTarea = id => {
@@ -44,8 +53,6 @@ function TaskList()  {
             return tarea;
         });
         setTareas(tareasActualizadas);
-
-
     };
 
     return (
@@ -61,13 +68,13 @@ function TaskList()  {
                  completada={tarea.completada}
                  completarTarea={completarTarea}
                  eliminarTarea={eliminarTarea}
-                 editarTarea={editarTarea} />
-              )
-          }
-        </div>
-        </>
-    );
-
-} 
+                 editarTarea={editarTarea} 
+                 actualizarTarea={actualizarTarea}
+                  />
+              )}          
+           </div>
+         </>
+       );
+     } 
 
 export default TaskList;

@@ -13,13 +13,8 @@ function TaskForm(props) {
 
   const manejarCambio = e => {
     setInput(e.target.value);
-
    
-    }
-
-    
-
-
+    };
 
 
   const manejarEnvio = e =>  {
@@ -33,6 +28,7 @@ function TaskForm(props) {
   
 
     props.onSubmit(tareaNueva);
+    setInput('');
 
         
 
@@ -47,6 +43,7 @@ function TaskForm(props) {
       type='text'
       placeholder='Ingresar tarea'
       name='texto'
+      value={input}
       onChange={manejarCambio}
       />
       <button className='tarea-boton'>

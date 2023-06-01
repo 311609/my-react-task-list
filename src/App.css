@@ -8,11 +8,11 @@ html,
 body {
   color: white;
   font-family: Lato, sans-serif;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 h1 {
-  color: black;
+  color: blue;
   font: 25px;
   font-family: Lato, sans-serif;
   text-align: center;
@@ -54,6 +54,6 @@ h1 {
   background-color: white;
 }
 
-html {
-  background-color: antiquewhite;
+.app { 
+  background-color: white;
 }
