@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../carpeta-estilos/Task.css";
-import { AiFillEdit, AiOutlineCloseCircle } from "react-icons/ai";
+import '../carpeta-estilos/Task.css';
+import { AiOutlineCloseCircle, AiFillEdit, AiOutlineCheckCircle, AiOutlineClose } from 'react-icons/ai'
 
-function Task({ id, texto, completada, completarTarea, eliminarTarea, editarTarea, actualizarTarea }) {
+function Task({id, texto, completada, completarTarea, editarTarea, eliminarTarea, actualizarTarea }) {
   const [nuevoTexto, setNuevoTexto] = useState(texto);
   const [editando, setEditando] = useState(false);
 
@@ -16,7 +16,7 @@ function Task({ id, texto, completada, completarTarea, eliminarTarea, editarTare
   };
 
   const handleCancelar = () => {
-    setNuevoTexto(texto);
+    setNuevoTexto(texto); 
     setEditando(false);
   };
 
@@ -25,13 +25,13 @@ function Task({ id, texto, completada, completarTarea, eliminarTarea, editarTare
   };
 
   return (
-    <div className={completada ? "tarea-contenedor completada" : "tarea-contenedor"}>
+    <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'}>
       {editando ? (
         <div className="tarea-editor-container">
           <input type="text" value={nuevoTexto} onChange={handleChangeTexto} className="tarea-editor" />
           <div className="tarea-iconos">
-            <AiFillEdit className="tarea-icono tarea-icono-editar" onClick={handleGuardar} />
-            <AiOutlineCloseCircle className="tarea-icono tarea-icono-borrar" onClick={handleCancelar} />
+            <AiOutlineCheckCircle className="tarea-icono tarea-icono-guardar" onClick={handleGuardar} />
+            <AiOutlineClose className="tarea-icono tarea-icono-cancelar" onClick={handleCancelar} />
           </div>
         </div>
       ) : (
