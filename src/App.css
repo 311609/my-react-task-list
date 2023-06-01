@@ -7,9 +7,9 @@
 html,
 body {
   color: white;
-  background-color: #1b1b32;
+  background-color: white;
   font-family: Lato, sans-serif;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 h1 {
@@ -47,4 +47,9 @@ h1 {
   margin: 10px;
   justify-content: center;
   border-radius: 26px;
+}
+ 
+.contenedor-Header {
+  margin-top: 5px 0px 8px 0px;
+  background-color: white;
 }
