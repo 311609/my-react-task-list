@@ -1,5 +1,5 @@
 .tarea-contenedor {
-    width: 500px;
+    width: 300px;
     min-height: 65px;
     background-color: rgb(72, 72, 159);
     margin: 5px 0;
@@ -10,44 +10,72 @@
     border-radius: 7px;
     border: 1px solid white;
     cursor: pointer;
-}
-.tarea-contenedor:nth-child(3n + 1) {
-    background-color: rgb(72, 72, 159);
-}
-
-.tarea-texto {
+    text-align: left;
+    margin-top: 5px;
+  }
+  
+  .tarea-contenedor:nth-child(3n + 1) {
+    background-color: rgb(72, 72, 150);
+    text-align: center;
+  }
+  
+  .tarea-texto {
     height: 100%;
     font-size: 20px;
+    color: white;
     display: flex;
     align-items: center;
     overflow-wrap: anywhere;
-
-}
-.tarea-icono {
+  }
+  
+  .tarea-icono {
     width: 20px;
     height: 20px;
     margin: 5px;
-}
-
-.tarea-contenedor.completada {
+    color: white;
+  }
+  
+  .tarea-contenedor.completada {
     background-color: #5a01a7;
     text-decoration: line-through;
-
-}
-.tarea-editor {
-    width: 100%; 
+  }
+  
+  .tarea-editor {
+    width: 100%;
     font-size: 16px;
     padding: 10px;
     resize: vertical;
     flex: 1;
     height: 30px;
   }
+  
   .tarea-editor-container {
     display: flex;
     align-items: center;
     width: 100%;
   }
-
+  
   .app {
     background-color: white;
   }
+  .tarea-input {
+    font-size: 18px;
+    background-color: white;
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #00371b;
+    outline: none;
+    color: black;
+  }
+  
+  .descripcion-input {
+    font-size: 18px;
+    background-color: white;
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #00371b;
+    outline: none;
+    color: black;
+    margin-top: 10px;
+  }
+  

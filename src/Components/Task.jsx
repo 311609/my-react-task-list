@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import '../carpeta-estilos/Task.css';
-import { AiOutlineCloseCircle, AiFillEdit, AiOutlineCheckCircle, AiOutlineClose } from 'react-icons/ai'
+import "../carpeta-estilos/Task.css";
+import {
+  AiOutlineCloseCircle,
+  AiFillEdit,
+  AiOutlineCheckCircle,
+  AiOutlineClose,
+} from "react-icons/ai";
 
-function Task({id, texto, completada, completarTarea, editarTarea, eliminarTarea, actualizarTarea }) {
+function Task({ id, texto, completada, completarTarea, editarTarea, eliminarTarea, actualizarTarea }) {
   const [nuevoTexto, setNuevoTexto] = useState(texto);
   const [editando, setEditando] = useState(false);
 
@@ -16,7 +21,7 @@ function Task({id, texto, completada, completarTarea, editarTarea, eliminarTarea
   };
 
   const handleCancelar = () => {
-    setNuevoTexto(texto); 
+    setNuevoTexto(texto);
     setEditando(false);
   };
 
@@ -25,7 +30,7 @@ function Task({id, texto, completada, completarTarea, editarTarea, eliminarTarea
   };
 
   return (
-    <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'}>
+    <div className={completada ? "tarea-contenedor completada" : "tarea-contenedor"}>
       {editando ? (
         <div className="tarea-editor-container">
           <input type="text" value={nuevoTexto} onChange={handleChangeTexto} className="tarea-editor" />

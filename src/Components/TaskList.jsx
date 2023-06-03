@@ -1,13 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Task from './Task.jsx';
 import '../carpeta-estilos/TaskList.css';
 import TaskForm from "./TaskForm.jsx";
 import { useTareas } from "../hooks.js";
 
-function TaskList()  {
-  const { tareas, setTareas} = useTareas();
+function TaskList() {
+  const { tareas, setTareas } = useTareas();
 
-  
+  useEffect(() => {
+    const storedTareas = JSON.parse(localStorage.getItem('tareas'));
+    if (storedTareas) {
+      setTareas(storedTareas);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tareas', JSON.stringify(tareas));
+  }, [tareas]);
+
   const agregarTarea = tarea => {
     if (tarea.texto.trim()) {
       tarea.texto = tarea.texto.trim();
@@ -22,7 +32,8 @@ function TaskList()  {
   };
 
   const editarTarea = id => {
-    setTareas(tareas.map(tarea => tarea.id === id ? {...tarea, isEditing: !tarea.isEditing } : tarea));
+    const tareasActualizadas = tareas.map(tarea => tarea.id === id ? { ...tarea, isEditing: !tarea.isEditing } : tarea);
+    setTareas(tareasActualizadas);
   };
 
   const actualizarTarea = (id, nuevoTexto) => {
@@ -46,14 +57,15 @@ function TaskList()  {
   };
 
   return (
-    <>
-      <TaskForm onSubmit={agregarTarea} />
+    <div>
+      <TaskForm manejarEnvio={agregarTarea} />
       <div className="tarea-lista-contenedor">
         {tareas.map(tarea =>
           <Task
             key={tarea.id}
             id={tarea.id}
             texto={tarea.texto}
+            descripcion={tarea.descripcion}
             completada={tarea.completada}
             completarTarea={completarTarea}
             eliminarTarea={eliminarTarea}
@@ -62,7 +74,7 @@ function TaskList()  {
           />
         )}
       </div>
-    </>
+    </div>
   );
 }
 

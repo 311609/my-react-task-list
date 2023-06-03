@@ -3,9 +3,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 .tarea-input {
-    width: 350px;
     font-size: 18px;
     background-color: white;
     padding: 14px 32px 14px 16px;
@@ -13,6 +13,7 @@
     border: 2px solid #00371b;
     outline: none;
     color: black;
+  
 }
 .tarea-boton {
     padding: 16px;
@@ -29,15 +30,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  
   }
   
   .tarea-input {
-    width: 100%;
     padding: 8px;
     margin-bottom: 8px;
+
   }
   
   .tarea-boton {
     padding: 8px 16px;
+    background-color: #00371b;
   }
   

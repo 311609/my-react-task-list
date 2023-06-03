@@ -1,58 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import '../carpeta-estilos/TaskForm.css';
-import { v4 as uuidv4 } from 'uuid';
 
-function TaskForm(props) {
-  const [input, setInput] = useState('');
-  const [descripcion, setDescripcion] = useState('');
+function TaskForm({ manejarEnvio }) {
+  const [texto, setTexto] = useState("");
+  const [descripcion, setDescripcion] = useState("");
 
-  const manejarCambio = e => {
-    setInput(e.target.value);
-  }
-
-  const manejarCambioDescripcion = e => {
-    setDescripcion(e.target.value);
-  }
-
-  const manejarEnvio = e => {
+  const handleSubmit = e => {
     e.preventDefault();
 
-    if (input.length < 3 && descripcion.length > 0) {
-      alert('El nombre de la tarea debe tener al menos 3 caracteres.');
+    if (texto.trim().length < 3) {
+      alert("La tarea debe tener al menos 3 caracteres");
       return;
     }
 
-    const tareaNueva = {
-      id: uuidv4(),
-      texto: input,
-      descripcion: descripcion,
-      completada: false
-    }
-    props.onSubmit(tareaNueva);
-    
-    setInput('');
-    setDescripcion('');
-  }
+    manejarEnvio({ texto, descripcion });
+    setTexto("");
+    setDescripcion("");
+  };
 
   return (
-    <form className='tarea-formulario' onSubmit={manejarEnvio}>
+    <form onSubmit={handleSubmit} className="tarea-formulario">
       <input
-        className='tarea-input'
-        type='text'
-        placeholder='Ingresar tarea'
-        name='texto'
-        value={input} 
-        onChange={manejarCambio}
+        type="text"
+        value={texto}
+        onChange={e => setTexto(e.target.value)}
+        placeholder="Añadir tarea"
+        className="tarea-input"
       />
       <input
-        className='tarea-input'
-        type='text'
-        placeholder='Ingresar descripción'
-        name='descripcion'
-        value={descripcion} 
-        onChange={manejarCambioDescripcion}
+        type="text"
+        value={descripcion}
+        onChange={e => setDescripcion(e.target.value)}
+        placeholder="Descripción de la tarea"
+        className="tarea-input"
       />
-      <button className='tarea-boton'>
+      <button type="submit" className="tarea-boton">
         Agregar
       </button>
     </form>

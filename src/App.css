@@ -1,42 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  color: white;
-  background-color: white;
-  font-family: Lato, sans-serif;
-  margin-top: 0;
-}
-
-h1 {
-  color: blue;
-  font: 25px;
-  font-family: Lato, sans-serif;
-  text-align: center;
-  margin: 20px 0;
-}
-
 .aplicacion-tareas {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 }
+
 .adaschool-logo-contenedor {
   width: 100%;
-  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.adaschool-logo {
-  width: 400px;
-  height: 60px;
+  margin-bottom: 20px;
 }
 
 .tareas-lista-principal {
@@ -44,12 +18,18 @@ h1 {
   min-height: 500px;
   background-color: #d0d0d5;
   padding: 25px;
-  margin: 10px;
-  justify-content: center;
+  margin: 10px auto;
   border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
- 
+
 .contenedor-Header {
-  margin-top: 5px 0px 8px 0px;
+  margin: 8px 0;
   background-color: white;
+}
+
+.container {
+  text-align: center;
 }
