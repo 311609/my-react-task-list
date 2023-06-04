@@ -5,13 +5,13 @@ const Nosotros = () => {
     <div>
       <h1>Sobre Nosotros</h1>
       <p>Esta aplicación fue desarrollada con el propósito de ayudarte a gestionar tus tareas de manera eficiente. Algunas de las funcionalidades que ofrece son:</p>
-      <ul>
+      <ul className='contenedor-usos'>
         <li>Crear nuevas tareas</li>
         <li>Marcar tareas como completadas</li>
         <li>Eliminar tareas</li>
       </ul>
       <p>La aplicación fue desarrollada utilizando las siguientes tecnologías:</p>
-      <ul>
+      <ul className='contenedor-usos'>
         <li>React.js</li>
         <li>HTML</li>
         <li>CSS</li>
