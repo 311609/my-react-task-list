@@ -20,6 +20,7 @@ function TaskForm({ manejarEnvio }) {
 
   return (
     <form onSubmit={handleSubmit} className="tarea-formulario">
+      <label>Tarea</label>
       <input
         type="text"
         value={texto}
@@ -27,6 +28,7 @@ function TaskForm({ manejarEnvio }) {
         placeholder="Añadir tarea"
         className="tarea-input"
       />
+      <label>Descripción</label>
       <input
         type="text"
         value={descripcion}
@@ -34,9 +36,12 @@ function TaskForm({ manejarEnvio }) {
         placeholder="Descripción de la tarea"
         className="tarea-input"
       />
+       <input type="date" color="black" />
       <button type="submit" className="tarea-boton">
         Agregar
       </button>
+      <input type="time" color="black" />
+     
     </form>
   );
 }

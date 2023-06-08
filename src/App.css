@@ -3,20 +3,25 @@
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
 }
 
 .adaschool-logo-contenedor {
   width: 100%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 14px;
 }
 
 .tareas-lista-principal {
-  width: 600px;
-  min-height: 500px;
-  background-color: #d0d0d5;
+  width: 800px;
+  min-height: 600px;
+  background-color: lightgray;
   padding: 25px;
   margin: 10px auto;
   border-radius: 26px;
@@ -27,12 +32,16 @@
 
 .contenedor-Header {
   margin: 8px 0;
-  background-color: white;
+
 }
 
 .container {
+  margin-top: 50px;
   text-align: center;
 }
+
+
+
 
 .contenedor-usos {
   text-align: left;

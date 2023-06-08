@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Task from './Task.jsx';
 import '../carpeta-estilos/TaskList.css';
 import TaskForm from "./TaskForm.jsx";
 import { useTareas } from "../hooks.js";
+import { v4 as uuidv4 } from 'uuid';
+import { Button } from "@chakra-ui/react";
 
 function TaskList() {
   const { tareas, setTareas } = useTareas();
+  const [modoOscuro, setModoOscuro] = useState(false);
 
   useEffect(() => {
     const storedTareas = JSON.parse(localStorage.getItem('tareas'));
@@ -21,7 +24,13 @@ function TaskList() {
   const agregarTarea = tarea => {
     if (tarea.texto.trim()) {
       tarea.texto = tarea.texto.trim();
-      const tareasActualizadas = [tarea, ...tareas];
+      const nuevaTarea = {
+        id: uuidv4(),
+        texto: tarea.texto,
+        descripcion: tarea.descripcion,
+        completada: false
+      };
+      const tareasActualizadas = [nuevaTarea, ...tareas];
       setTareas(tareasActualizadas);
     }
   };
@@ -56,11 +65,15 @@ function TaskList() {
     setTareas(tareasActualizadas);
   };
 
+  const toggleModoOscuro = () => {
+    setModoOscuro(prevModo => !prevModo);
+  };
+
   return (
     <div>
       <TaskForm manejarEnvio={agregarTarea} />
       <div className="tarea-lista-contenedor">
-        {tareas.map(tarea =>
+        {tareas.map(tarea => (
           <Task
             key={tarea.id}
             id={tarea.id}
@@ -72,10 +85,10 @@ function TaskList() {
             editarTarea={editarTarea}
             actualizarTarea={actualizarTarea}
           />
-        )}
-      </div>
+        ))}
     </div>
+     </div>
   );
-}
+        }
 
-export default TaskList;
+        export default TaskList;

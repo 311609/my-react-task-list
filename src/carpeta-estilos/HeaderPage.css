@@ -1,0 +1,6 @@
+
+.encabezado {
+  position: relative;
+  z-index: 2;
+  justify-content: left;
+}
